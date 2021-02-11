@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using YouSourceSkillTest.Enumerations;
 using YouSourceSkillTest.Models;
@@ -17,6 +18,8 @@ namespace YouSourceSkillTest.Controllers
                 return new SortResult("Text Contain Numbers!!");
             if (string.IsNullOrEmpty(sortDto.SortStrategy.ToString()))
                 return new SortResult("No Sorting Strategy Selected");
+            if (!Regex.IsMatch(sortDto.TextToSort, @"^[a-zA-Z0-9\s.\?\,\'\;\:\!\-]+$"))
+                return new SortResult("Special Character Not Allowed");
             if(sortDto.SortStrategy.Equals(SortStrategy.BUBBLESORT))
                 return new SortResult()
                 {
