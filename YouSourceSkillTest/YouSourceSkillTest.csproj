@@ -46,10 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\SortStrategyBase.cs" />
     <Compile Include="Controllers\SortController.cs" />
     <Compile Include="Enumerations\SortStrategy.cs" />
     <Compile Include="Models\SortDto.cs" />
     <Compile Include="Models\SortResult.cs" />
+    <Compile Include="SortStrategies\BubbleSort.cs" />
+    <Compile Include="SortStrategies\QuickSort.cs" />
     <Compile Include="Views\SortForm.cs">
       <SubType>Form</SubType>
     </Compile>

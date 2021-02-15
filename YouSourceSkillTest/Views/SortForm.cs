@@ -29,6 +29,7 @@ namespace YouSourceSkillTest.Views
                 TextToSort = tb_textToSort.Text,
                 SortStrategy = (SortStrategy)cb_sortingStrategy.SelectedItem
             };
+
             var sortResult = _sortController.SortText(sortDto);
             if (sortResult.IsSuccessful)
                 lbl_sorted_text.Text = sortResult.Result;
