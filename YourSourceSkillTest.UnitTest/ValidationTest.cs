@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,9 +31,10 @@ namespace YourSourceSkillTest.UnitTest
             var sortController = new SortController();
             var sortDto = new SortDto()
             {
-                TextToSort = "Lorem Ipsum123"
+                TextToSort = "Lorem Ipsum"
             };
-            Assert.IsFalse(sortController.SortText(sortDto).IsSuccessful);
+            // It should be True because not setting Sort Strategy will have default BUBBLE SORT
+            Assert.IsTrue(sortController.SortText(sortDto).IsSuccessful);
         }
         [TestMethod]
         public void NoSpecialCharacterTest()
